@@ -1,0 +1,25 @@
+investment:
+  - investment_type: SAVINGS_ACCOUNT
+    symbol:
+    investment_value: 1500
+    currency: USD
+    yield: 2.5
+    updated_at:
+  - investment_type: CRYPTO
+    symbol:
+    investment_value: 0.05
+    currency: USD
+    yield:
+    updated_at:
+  - investment_type: STOCK
+    symbol:
+    investment_value: 10000
+    currency: USD
+    yield:
+    updated_at:
+  - investment_type: ETF
+    symbol:
+    investment_value: 10000
+    currency: USD
+    yield:
+    updated_at:

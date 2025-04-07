@@ -1,0 +1,73 @@
+jan2025:
+  expenses:
+    - class: LEISURE
+    - class: HOUSE
+    - class: FOOD
+fev2025:
+  expenses:
+    - class: LEISURE
+    - class: HOUSE
+    - class: FOOD
+mar2025:
+  expenses:
+    - class: LEISURE
+    - class: HOUSE
+    - class: FOOD
+apr2025:
+  expenses:
+    - class: LEISURE
+    - class: HOUSE
+    - class: FOOD
+may2025:
+  expenses:
+    - class: LEISURE
+    - class: HOUSE
+    - class: FOOD
+jun2025:
+  expenses:
+    - class: LEISURE
+      expense_value:
+    - class: HOUSE
+      expense_value:
+    - class: FOOD
+      expense_value:
+jul2025:
+  expenses:
+    - class: LEISURE
+      expense_value:
+    - class: HOUSE
+      expense_value:
+    - class: FOOD
+      expense_value:
+aug2025:
+  expenses:
+    - class: LEISURE
+      expense_value:
+    - class: HOUSE
+      expense_value:
+    - class: FOOD
+      expense_value:
+sep2025:
+  expenses:
+    - class: LEISURE
+      expense_value:
+    - class: HOUSE
+      expense_value:
+    - class: FOOD
+      expense_value:
+nov2025:
+  expenses:
+    - class: LEISURE
+      expense_value:
+    - class: HOUSE
+      expense_value:
+    - class: FOOD
+      expense_value:
+dec2025:
+  expenses:
+    - class: LEISURE
+      expense_value:
+    - class: HOUSE
+      expense_value:
+    - class: FOOD
+      expense_value:
