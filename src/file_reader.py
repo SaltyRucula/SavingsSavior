@@ -1,17 +1,24 @@
+import os
+
 import yaml
 import csv
+import glob
 from models.expense import Expense
 from models.investment import Investment
 
 BASE_YAML_PATH = "yaml/"
+BASE_CSV_PATH = "csv/"
 
 
 def create_investment_objects() -> list[Investment]:
-    yaml_data = read_yaml(BASE_YAML_PATH + "investments.yaml")
+    csv_files = glob.glob(os.path.join(BASE_CSV_PATH, "*.csv"))
 
     investments = []
-    for investment in yaml_data.get("investment"):
-        investments.append(Investment.from_dict_entry(investment))
+    for file in csv_files:
+        symbol = os.path.splitext(os.path.basename(file))[0]
+        with open(file, mode="r", newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            investments.append(Investment.to_object(reader, symbol=symbol))
 
     return investments
 
@@ -21,7 +28,7 @@ def create_expenses_objects() -> list[Expense]:
 
     expenses = []
     for expense in yaml_data.get("expenses"):
-        expenses.append(Expense.from_dict_entry(expense))
+        expenses.append(Expense.to_object(expense))
 
     return expenses
 

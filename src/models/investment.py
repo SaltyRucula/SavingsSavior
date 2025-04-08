@@ -1,26 +1,22 @@
 from enum import Enum
-from .yaml_parseable import YamlParseable
+from .yaml_parseable import Parseable
 
 
-class InvestmentClass(Enum):
-    SAVINGS_ACCOUNT = 1
-    CRYPTO = 2
-    STOCK = 3
-    ETF = 4
-    BONDS = 5
-
-
-class Investment(YamlParseable):
-    def __init__(self, investment_type: str, symbol: str, investment_value: int):
-        #try except, raising exceptions
-        try:
-            self.investment_type = InvestmentClass[investment_type]
-        except KeyError:
-            raise KeyError(f"value must be a ExpenseClass, got {type(investment_type).__name__}")
-
+class Investment(Parseable):
+    def __init__(self, symbol: str, investment_values: list[int], investment_dates: list[int]):
         self.symbol = symbol
-        self.investment_value = investment_value
+        self.investment_dates = investment_dates
+        self.investment_value = investment_values
 
     @staticmethod
-    def from_dict_entry(data: dict):
-        return Investment(data.get('investment_type'), data.get('symbol'), data.get('investment_value'))
+    def to_object(data, **kwargs) -> 'Investment':
+        investment_dates = []
+        investment_values = []
+
+        symbol = kwargs.get('symbol', None)
+
+        for row in data:
+            investment_dates.append(row['date'])
+            investment_values.append(int(row['investment_value']))
+
+        return Investment(symbol, investment_dates, investment_values)

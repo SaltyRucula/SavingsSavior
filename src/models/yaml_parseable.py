@@ -2,9 +2,9 @@ from abc import abstractmethod, ABC
 
 
 #abstract classes, static methods (annotations)
-class YamlParseable(ABC):
+class Parseable(ABC):
 
     @staticmethod
     @abstractmethod
-    def from_dict_entry(data: dict):
+    def to_object(data: dict, **kwargs):
         pass
