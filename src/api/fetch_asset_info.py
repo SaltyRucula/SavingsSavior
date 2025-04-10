@@ -11,6 +11,6 @@ def fetch_asset_info(symbol: str):
     response = httpx.get(url)
     if response.status_code == 200:
         data = response.json()
-        print(data)
+        return data
     else:
         print("Error:", response.status_code)

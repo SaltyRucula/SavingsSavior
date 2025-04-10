@@ -43,5 +43,11 @@ def read_csv(csv_path: str) -> list:
         reader = csv.DictReader(file)
         return [row for row in reader]
 
+
+def entry_to_csv(csv_path: str, fieldnames, new_entry):
+    with open(BASE_CSV_PATH + csv_path, "a") as file:
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        writer.writerow(new_entry)
+
 #create_expenses_objects()
 create_investment_objects()
